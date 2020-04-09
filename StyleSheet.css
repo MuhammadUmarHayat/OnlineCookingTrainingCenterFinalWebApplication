@@ -1,0 +1,38 @@
+﻿body {
+    background-color:blueviolet;
+    padding: 10px;
+}
+
+.Container {
+    margin: 10px;
+    background-color:aquamarine;
+    padding: 10px;
+    height: 1000px;
+}
+.main {
+    background-color:azure;
+}
+
+.Header {
+    background-color:aliceblue;
+}
+
+.Footer {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: burlywood;
+}
+
+.Section {
+    align-content: center;
+    height: 800px;
+    width: 80%;
+    padding-top: 10px;
+}
+
+.NavBar {
+    background-color:antiquewhite;
+        
+    height: 30px;
+}
+

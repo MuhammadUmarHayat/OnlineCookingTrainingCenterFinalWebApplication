@@ -1,0 +1,76 @@
+﻿
+/////////////////
+CREATE TABLE [dbo].[Users] (
+    [UserID]   INT            NOT NULL,
+    [Name]     NVARCHAR (50)  NULL,
+    [Gender]   NVARCHAR (50)  NULL,
+    [Password] NVARCHAR (50)  NULL,
+    [Address]  NVARCHAR (MAX) NULL,
+    [Email]    NVARCHAR (50)  NULL,
+    [Mobile]   NVARCHAR (50)  NULL,
+    [Image]    NVARCHAR (50)  NULL,
+    [usertype] NVARCHAR (50)  NULL,
+    PRIMARY KEY CLUSTERED ([UserID] ASC)
+);
+
+Users(UserID,Name,Gender,Password,Address,Email,Mobile,Image,usertype)
+////////////////////
+
+CREATE TABLE [dbo].Category
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Title] NVARCHAR(100) NULL, 
+    [Description] NVARCHAR(MAX) NULL
+)
+Category(Title,Description)
+
+/////////////////
+CREATE TABLE [dbo].FeedBack
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Userid] NVARCHAR(50) NULL, 
+    [Message] NVARCHAR(MAX) NULL, 
+    [Date] DATE NULL, 
+    [Reply] NVARCHAR(MAX) NULL, 
+    [RepliedBy] NVARCHAR(50) NULL
+)
+////////////////////////////////////
+CREATE TABLE [dbo].[Recipe] (
+    [Id]              INT           IDENTITY (1, 1) NOT NULL,
+    [Category]        NVARCHAR (50) NULL,
+    [Title]           NVARCHAR (50) NULL,
+    [image]           NVARCHAR (50) NULL,
+    [Status]          NVARCHAR (50) NULL,
+    [Price]           INT           NULL,
+    [userid]          NVARCHAR (50) NULL,
+    [FoodType]        NVARCHAR (50) NULL,
+    [preparationTime] NVARCHAR (50) NULL,
+    [RequiredTime]    NVARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+Recipe(Category,Title,image,Status,Price,userid,FoodType,preparationTime,RequiredTime)
+//////////////////////////
+
+CREATE TABLE [dbo].[Recipe_Ingredients] (
+    [Id]         INT           IDENTITY (1, 1) NOT NULL,
+    [rid]        NVARCHAR(50)           NULL,
+    [ingrediant] NVARCHAR (50) NULL,
+    [quantity]   NVARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+Recipe_Ingredients(rid,ingrediant,quantity)
+
+CREATE TABLE [dbo].[Recipe_Description] (
+    [Id]    INT            IDENTITY (1, 1) NOT NULL,
+    [Step1] NVARCHAR (200) NULL,
+    [Step2] NVARCHAR (200) NULL,
+    [Step3] NVARCHAR (200) NULL,
+    [Step4] NVARCHAR (200) NULL,
+    [Step5] NVARCHAR (200) NULL,
+    [rid]   NVARCHAR (50)          NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+Recipe_Description(Step1,Step2,Step3,Step4,Step5,rid)

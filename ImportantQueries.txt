@@ -1,0 +1,5 @@
+﻿
+
+
+UpdateCommand="update users set [Name]=@Name, [Address]=@Address, [Email]=@Email, [Mobile]=@Mobile, [usertype]=@usertype where userid=@userid"
+DeleteCommand="delete from users where userid=@userid"
